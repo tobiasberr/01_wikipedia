@@ -23,11 +23,10 @@ params = AttrDict(
 
 data = tf.placeholder(tf.int32, [None])
 target = tf.placeholder(tf.int32, [None])
-model = EmbeddingModel(data, target, params)
+model = EmbeddingModel( data, target, params)
 
 corpus = Wikipedia(
-    'https://dumps.wikimedia.org/enwiki/20160501/'
-    'enwiki-20160501-pages-meta-current1.xml-p000000010p000030303.bz2',
+    'https://dumps.wikimedia.org/ruwiki/20170420/ruwiki-20170420-pages-meta-current2.xml-p311183p1453597.bz2',
     WIKI_DOWNLOAD_DIR,
     params.vocabulary_size)
 examples = skipgrams(corpus, params.max_context)
